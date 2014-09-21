@@ -22,17 +22,19 @@ namespace PwCRiskDatabase.SQLServerDAL
         private const string INSERT_TYPE = "insert into risk_type(risk_type_number, risk_type_name )values(?TypeNumber, ?TypeName)";
 
         private const string UPDATE_TYPE = "update risk_type set risk_type_number=?TypeNumber, risk_type_name=?TypeName where risk_type_number = ?TypeNumber";
+        //Get all types from database
         public static List<RiskType> GetTypes()
         {
             List<RiskType> TypeList = new List<RiskType>();
             using (MySqlDataReader sdr = MySqlHelper.ExecuteReader(MySqlHelper.CONN_STR, CommandType.Text, SELECT_ALL_TYPE))
             {
                 while (sdr.Read())
-                    TypeList.Add(new RiskType(sdr.GetString(0), sdr.GetString(0)));
+                    TypeList.Add(new RiskType(sdr.GetString(0), sdr.GetString(1)));
 
             }
             return TypeList;
         }
+        //Get type by id from database
         public static bool GetTypeByNumber(String TypeNumber, out RiskType type)
         {
             MySqlParameter parm = new MySqlParameter(PARAM_TYPENUMBER, MySqlDbType.VarChar, 45);
@@ -51,12 +53,14 @@ namespace PwCRiskDatabase.SQLServerDAL
                 }
             }
         }
+        //delete type by id
         public static bool DeleteTypeByNumber(String TypeNumber)
         {
             MySqlParameter parm = new MySqlParameter(PARAM_TYPENUMBER, MySqlDbType.VarChar, 45);
             parm.Value = TypeNumber;
             return MySqlHelper.ExecuteNonQuery(MySqlHelper.CONN_STR, CommandType.Text, DELETE_TYPE_BY_TYPENAME, parm);
         }
+        //insert a type into database
         public static bool InsertType(RiskType type)
         {
             MySqlParameter[] parms = new MySqlParameter[] { 
@@ -64,6 +68,7 @@ namespace PwCRiskDatabase.SQLServerDAL
                 new MySqlParameter(PARAM_TYPENAME, type.TypeName)};
             return MySqlHelper.ExecuteNonQuery(MySqlHelper.CONN_STR, CommandType.Text, INSERT_TYPE, parms);
         }
+        //update a type
         public static bool UpdateType(RiskType type)
         {
             MySqlParameter[] parms = new MySqlParameter[] { 

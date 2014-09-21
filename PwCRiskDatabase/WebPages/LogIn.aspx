@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="PwCRiskDatabase.WebPages.RiskItems" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="PwCRiskDatabase.WebPages.LogIn" %>
 
 <!DOCTYPE html>
 

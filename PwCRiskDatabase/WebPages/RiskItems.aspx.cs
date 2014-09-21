@@ -1,29 +1,21 @@
-﻿using PwCRiskDatabase.Models;
-using PwCRiskDatabase.SQLServerDAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
+using System.Web.Services;
+using PwCRiskDatabase.Models;
+using PwCRiskDatabase.SQLServerDAL;
 
 namespace PwCRiskDatabase.WebPages
 {
-    public partial class LogIn : System.Web.UI.Page
+    public partial class RiskItems : System.Web.UI.Page
     {
-        protected System.Web.UI.WebControls.Label lblTitle;
-        protected System.Web.UI.WebControls.Label lblDataTime;
-        protected System.Web.UI.WebControls.Label lblContent;
-        protected System.Web.UI.WebControls.Label lblMsg;
-
-        protected void Page_Load(object sender, EventArgs e)
+        [WebMethod]
+        public static List<RiskType> GetData()
         {
-            /*RiskType type;
-            if (RiskTypeDB.GetTypeByNumber("M",out type))
-                this.lblTitle.Text = type.TypeName;
-            RiskTypeDB.DeleteTypeByNumber("M");
-            RiskTypeDB.InsertType(new RiskType("Z","hello"));
-            RiskTypeDB.UpdateType(new RiskType("Z","45654"));*/
+            List<RiskType> Types = RiskTypeDB.GetTypes();
+            return Types;
         }
     }
 }

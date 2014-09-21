@@ -1,0 +1,22 @@
+﻿.dangers-content {
+    margin-left:50px;margin-right:50px;margin-top:70px;
+}
+.dangers-p {
+    margin-top:20px;
+}
+.danger-link {
+   
+    margin-top:10px;
+    margin-right:20px;
+}
+p {
+    margin-top:10px;
+}
+.head-li {
+    display: block;
+    text-align:left;
+    color:green;
+    padding-top:5px;
+    padding-left:10px;
+    padding-bottom:5px;
+}

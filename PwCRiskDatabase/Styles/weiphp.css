@@ -67,7 +67,7 @@ background-clip: none;}
 
 /* 侧栏 */
 .sidebar{ position:fixed; top:50px; left:0; bottom:0; width:200px; border-top:3px solid #1dbd03; background:url(../images/login_bg.jpg) no-repeat; overflow-y:auto; overflow-x:hidden; padding-bottom:30px;}
-.sidebar li a{ display:block;color:#ddd; height:40px; border-bottom:1px solid #161e38; border-top:1px solid #000; line-height:40px; padding:0 10px;}
+.sidebar li a{ display:block;color:#ddd; height:40px; border-bottom:1px solid #161e38; border-top:1px solid #000; line-height:auto; padding:0 10px;}
 .sidebar li a:hover{ color:#6b6a89;}
 .sidebar li.active a{ color:#1dbd03}
 .sidebar .fa{ font-size:15px; padding-right:10px;}

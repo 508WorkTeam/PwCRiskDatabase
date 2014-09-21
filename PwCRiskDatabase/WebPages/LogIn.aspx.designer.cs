@@ -10,7 +10,7 @@
 namespace PwCRiskDatabase.WebPages {
     
     
-    public partial class RiskItems {
+    public partial class LogIn {
         
         /// <summary>
         /// form1 控件。

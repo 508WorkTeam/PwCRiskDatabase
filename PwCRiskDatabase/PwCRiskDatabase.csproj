@@ -65,16 +65,14 @@
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\login_bg.jpg" />
     <Content Include="Images\top_logo.png" />
-    <Content Include="Libs\bootstrap.js" />
     <Content Include="Libs\jquery-2.js" />
-    <Content Include="Libs\jquery.js" />
-    <Content Include="Scripts\admin_common.js" />
-    <Content Include="Scripts\admin_image.js" />
-    <Content Include="Scripts\dialog.js" />
+    <Content Include="Scripts\AjaxSupport.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\RiskItems.js" />
     <Content Include="Styles\base.css" />
     <Content Include="Styles\font-awesome\css\font-awesome.css" />
     <Content Include="Styles\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Styles\main.content.css" />
     <Content Include="Styles\module.css" />
     <Content Include="Styles\weiphp.css" />
     <Content Include="Web.config" />
@@ -84,15 +82,14 @@
     <Content Include="WebPages\LogIn.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="Models\RiskPoint.cs" />
     <Compile Include="Models\RiskType.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\RiskTypeDB.cs" />
     <Compile Include="DAL\MySqlHelper.cs" />
-    <Compile Include="DAL\UserDB.cs" />
     <Compile Include="WebPages\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebPages\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -159,10 +156,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BLL\" />
     <Folder Include="Utilities\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
