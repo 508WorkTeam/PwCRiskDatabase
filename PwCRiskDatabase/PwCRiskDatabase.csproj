@@ -66,6 +66,7 @@
     <Content Include="WebPages\RiskItems.aspx" />
     <Content Include="WebPages\Register.aspx" />
     <Content Include="WebPages\LogIn.aspx" />
+    <Content Include="WebPages\test.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\UserBLL.cs" />
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="WebPages\LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
